@@ -89,6 +89,7 @@ except Exception:
   if pari.found() and not meson.is_cross_build()
     # Verify PARI version
     pari_version_code = '''
+    #include <pari/parisys.h>
     #include <pari/pari.h>
     int main(void) {
       pari_init(1000000, 2);
