@@ -1,0 +1,12 @@
+diff --git a/src/basemath/nffactor.c b/src/basemath/nffactor.c
+--- a/src/basemath/nffactor.c
++++ b/src/basemath/nffactor.c
+@@ -808,7 +808,7 @@ nf_root_bounds(GEN nf, GEN P)
+   if (RgX_is_rational(P)) return polrootsbound(P, NULL);
+   r1 = nf_get_r1(nf);
+   P = Q_primpart(P);
+-  prec = ZXX_max_lg(P) + 1;
++  prec = bit_accuracy(ZXX_max_lg(P)) + 1;
+   l = lg(P);
+   if (nf_get_prec(nf) >= prec)
+     R = nf_get_roots(nf);
